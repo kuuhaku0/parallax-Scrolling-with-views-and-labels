@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kdl-hJ-gXf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Mainscrnvc-->
+        <scene sceneID="y06-IG-sh5">
+            <objects>
+                <viewController id="Kdl-hJ-gXf" customClass="mainscrnvc" customModule="parallax2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jh-mt-nr8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtW-47-CfR">
+                                <rect key="frame" x="152" y="318" width="71" height="30"/>
+                                <state key="normal" title="Get Image"/>
+                                <connections>
+                                    <action selector="getImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vyI-Qu-cB5"/>
+                                    <action selector="getimage:" destination="Kdl-hJ-gXf" eventType="touchUpInside" id="evW-wt-kzx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4F4-K3-G3g">
+                                <rect key="frame" x="172" y="356" width="30" height="30"/>
+                                <state key="normal" title="go"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="OKp-vR-pbG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4F4-K3-G3g" firstAttribute="top" secondItem="RtW-47-CfR" secondAttribute="bottom" constant="8" id="FM9-zR-h25"/>
+                            <constraint firstItem="4F4-K3-G3g" firstAttribute="centerX" secondItem="7jh-mt-nr8" secondAttribute="centerX" id="Nux-ah-OGQ"/>
+                            <constraint firstItem="RtW-47-CfR" firstAttribute="centerX" secondItem="7jh-mt-nr8" secondAttribute="centerX" id="VYC-KH-KUD"/>
+                            <constraint firstItem="RtW-47-CfR" firstAttribute="centerY" secondItem="7jh-mt-nr8" secondAttribute="centerY" id="ixZ-PY-l8B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K3x-h6-MTY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ne8-lx-ogf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543.20000000000005" y="133.5832083958021"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="parallax2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRg-QC-aBz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bRg-QC-aBz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="75Y-UG-8oF"/>
+                            <constraint firstItem="bRg-QC-aBz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PFq-In-sx1"/>
+                            <constraint firstItem="bRg-QC-aBz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ecf-2u-4Tt"/>
+                            <constraint firstItem="bRg-QC-aBz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z53-7E-lhx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="bRg-QC-aBz" id="6Eq-n6-UEK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="191" y="134"/>
         </scene>
     </scenes>
 </document>

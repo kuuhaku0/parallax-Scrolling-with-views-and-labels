@@ -14,6 +14,10 @@
 		8154AA4920059D0900B739AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8154AA4720059D0900B739AE /* LaunchScreen.storyboard */; };
 		8154AA5420059D0900B739AE /* parallax2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA5320059D0900B739AE /* parallax2Tests.swift */; };
 		8154AA5F20059D0900B739AE /* parallax2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA5E20059D0900B739AE /* parallax2UITests.swift */; };
+		8154AA6D20059D5F00B739AE /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA6C20059D5F00B739AE /* ParallaxView.swift */; };
+		8154AA6F2005C05900B739AE /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA6E2005C05900B739AE /* NetworkHelper.swift */; };
+		8154AA712005C12100B739AE /* Pixabay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA702005C12100B739AE /* Pixabay.swift */; };
+		8154AA732005C8C400B739AE /* mainscrnvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154AA722005C8C400B739AE /* mainscrnvc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		8154AA5A20059D0900B739AE /* parallax2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = parallax2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8154AA5E20059D0900B739AE /* parallax2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parallax2UITests.swift; sourceTree = "<group>"; };
 		8154AA6020059D0900B739AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8154AA6C20059D5F00B739AE /* ParallaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
+		8154AA6E2005C05900B739AE /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		8154AA702005C12100B739AE /* Pixabay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixabay.swift; sourceTree = "<group>"; };
+		8154AA722005C8C400B739AE /* mainscrnvc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainscrnvc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,11 @@
 			children = (
 				8154AA3E20059D0900B739AE /* AppDelegate.swift */,
 				8154AA4020059D0900B739AE /* ViewController.swift */,
+				8154AA6E2005C05900B739AE /* NetworkHelper.swift */,
+				8154AA702005C12100B739AE /* Pixabay.swift */,
+				8154AA6C20059D5F00B739AE /* ParallaxView.swift */,
 				8154AA4220059D0900B739AE /* Main.storyboard */,
+				8154AA722005C8C400B739AE /* mainscrnvc.swift */,
 				8154AA4520059D0900B739AE /* Assets.xcassets */,
 				8154AA4720059D0900B739AE /* LaunchScreen.storyboard */,
 				8154AA4A20059D0900B739AE /* Info.plist */,
@@ -259,7 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8154AA6F2005C05900B739AE /* NetworkHelper.swift in Sources */,
+				8154AA732005C8C400B739AE /* mainscrnvc.swift in Sources */,
 				8154AA4120059D0900B739AE /* ViewController.swift in Sources */,
+				8154AA712005C12100B739AE /* Pixabay.swift in Sources */,
+				8154AA6D20059D5F00B739AE /* ParallaxView.swift in Sources */,
 				8154AA3F20059D0900B739AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
