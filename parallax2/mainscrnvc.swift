@@ -20,8 +20,11 @@ class mainscrnvc: UIViewController {
     }
     
     @IBAction func getimage(_ sender: UIButton) {
-        for i in pixabay {
+        DispatchQueue.main.async {
+        
+            for i in self.pixabay {
             ImageAPIClient.manager.loadImage(from: i.webformatURL!, completionHandler: {self.images.append($0)}, errorHandler: {print($0)})
+        }
         }
     }
     

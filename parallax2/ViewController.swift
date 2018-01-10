@@ -17,7 +17,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var scrollViewData1 = [UIImage]()
+    var scrollViewData1 = [UIImage]() {
+        didSet {
+            print("GOT \(scrollViewData1.count) IMAGES")
+        }
+    }
     
     var scrollViewData = [ScrollViewData]()
     
@@ -32,22 +36,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                           ScrollViewData.init(title: "Second", image: #imageLiteral(resourceName: "download-1")),
                           ScrollViewData.init(title: "Third", image: #imageLiteral(resourceName: "window"))]
         
-        scrollView.contentSize.width = self.scrollView.frame.width * CGFloat(scrollViewData1.count)
+        scrollView.contentSize.width = self.view.bounds.width * CGFloat(scrollViewData1.count)
         
         var i = 0
         for data in scrollViewData1 {
-            let view = ParallaxView(frame: CGRect(x: 10 + (self.scrollView.frame.width * CGFloat(i)), y: 80, width: self.scrollView.frame.width - 20, height: self.scrollView.frame.height - 90))
-            
+            let view = ParallaxView(frame: CGRect(x: 10 + (self.view.bounds.width * CGFloat(i)), y: 80, width: self.view.bounds.width - 20, height: self.scrollView.bounds.height - 90))
+        
             view.imageView.image = data
             view.tag = i + viewTagValue
             self.scrollView.addSubview(view)
             
-            let label = UILabel(frame: CGRect.init(origin: CGPoint.init(x: 0, y: 20), size: CGSize.init(width: 0, height: 40)))
-            label.text = "Pics"
+            let label = UILabel(frame: CGRect.init(origin: CGPoint.init(x: 0, y: 20), size: CGSize.init(width: 80, height: 40)))
+            
+            label.text = "Picture"
             label.font = UIFont.boldSystemFont(ofSize: 30)
             label.textColor = .black
             label.sizeToFit()
+            label.textAlignment = .center
             label.tag = i + tagValue
+            
             if i == 0 {
                 label.center.x = view.center.x
             }
@@ -62,13 +69,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == scrollView {
             for i in 0..<scrollViewData1.count {
-                let label = scrollView.viewWithTag(i + tagValue) 
-                let view = scrollView.viewWithTag(i + viewTagValue)
-                let scrollContentOffset = scrollView.contentOffset.x + self.scrollView.frame.width
-                let viewOffset = ((view?.center.x)! - scrollView.bounds.width / 4) - scrollContentOffset
-                label?.center.x = scrollContentOffset - ((scrollView.bounds.width / 4 - viewOffset) / 2)
+                let label = scrollView.viewWithTag(i + tagValue) as! UILabel
+                let view = scrollView.viewWithTag(i + viewTagValue) as! ParallaxView
+                let scrollContentOffset = scrollView.contentOffset.x + self.view.bounds.width
+                let viewOffset = (view.center.x - self.view.bounds.width / 4) - scrollContentOffset
+                label.center.x = scrollContentOffset - ((self.view.bounds.width / 4 - viewOffset) / 2)
             }
         }
+        print(scrollView.contentSize.width)
+        
+        print(scrollView.bounds.width)
     }
 }
 
